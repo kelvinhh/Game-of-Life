@@ -1,6 +1,6 @@
 /*
     Game of Life
-    
+
     by kelvinhh
     January 27, 2024
 */
@@ -11,7 +11,7 @@
 int main(int argc, char *argv[]){
     // initialize board
     Board* board = new Board(10, 10);
-    board->init();
+    board->randomState();
     board->print();
 
     delete board;

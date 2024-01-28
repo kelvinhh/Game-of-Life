@@ -1,16 +1,18 @@
 #include <iostream>
+#include <random>
+#include "cell.h"
 #ifndef _BOARD_H_
 #define _BOARD_H_
 
 class Board {
     int width;
     int height;
-    int **board;
+    Cell **board;
 public:
     Board(int width, int height);
     ~Board();
-    void init();
     void print();
+    void randomState();
 };
 
 #endif

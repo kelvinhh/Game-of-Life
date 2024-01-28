@@ -1,8 +1,16 @@
 #include "board.h"
 
-Board::Board(int width, int height) {
-    this->width = width;
-    this->height = height;
+Board::Board(int width, int height): width{width}, height{height} {
+    board = new Cell*[height];
+    for (int i = 0; i < height; i++) {
+        board[i] = new Cell[width];
+    }
+    // set default value to 1
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            board[i][j].setPos(i, j);
+        }
+    }
 }
 Board::~Board() {
     for (int i = 0; i < height; i++) {
@@ -11,25 +19,28 @@ Board::~Board() {
     }
     delete[] board;
 }
-void Board::init() {
-    // allocate memory for board
-    board = new int*[height];
-    for (int i = 0; i < height; i++) {
-        board[i] = new int[width];
-    }
-    // set default value to 1
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            board[i][j] = 1;
-        }
-    }
-}
 void Board::print() {
     for (int i = 0; i < height; i++) {
         std::cout << "|";
         for (int j = 0; j < width; j++) {
-            std::cout << board[i][j] << "|";
+            if (board[i][j].isAlive())
+                std::cout << "#";
+            else
+                std::cout << " ";
         }
-        std::cout << std::endl;
+        std::cout << "|" << std::endl;
+    }
+}
+void Board::randomState() {
+    srand(time(NULL));
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++){
+            int n = rand() % 2;
+            if (n) {
+                board[i][j].goAlive();
+            } else {
+                board[i][j].goDie();
+            }
+        }
     }
 }

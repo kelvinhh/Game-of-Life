@@ -1,1 +1,1 @@
-main.o: main.cpp board.h action.h
+main.o: main.cpp board.h cell.h action.h

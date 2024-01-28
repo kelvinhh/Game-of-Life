@@ -1,1 +1,1 @@
-board.o: board.cpp board.h
+board.o: board.cpp board.h cell.h
