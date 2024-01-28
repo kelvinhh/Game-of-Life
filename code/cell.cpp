@@ -14,3 +14,9 @@ void Cell::setPos(int x, int y) {
     this->x = x;
     this->y = y;
 }
+char Cell::status() {
+    if (this->alive)
+        return '#';
+    else
+        return ' ';
+}

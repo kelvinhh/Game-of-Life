@@ -11,6 +11,7 @@ public:
     void goDie();
     void goAlive();
     void setPos(int x, int y);
+    char status();
 };
 
 #endif

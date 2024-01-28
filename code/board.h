@@ -12,6 +12,8 @@ public:
     Board(int width, int height);
     ~Board();
     void print();
+
+    // randomize the state of the board
     void randomState();
 };
 

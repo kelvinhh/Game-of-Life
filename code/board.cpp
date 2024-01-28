@@ -23,10 +23,7 @@ void Board::print() {
     for (int i = 0; i < height; i++) {
         std::cout << "|";
         for (int j = 0; j < width; j++) {
-            if (board[i][j].isAlive())
-                std::cout << "#";
-            else
-                std::cout << " ";
+            std::cout << board[i][j].status();
         }
         std::cout << "|" << std::endl;
     }
