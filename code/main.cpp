@@ -1,12 +1,19 @@
 /*
     Game of Life
-     by kelvinhh
-     January 27, 2024
+    
+    by kelvinhh
+    January 27, 2024
 */
 #include <iostream>
+#include "board.h"
+#include "action.h"
 
 int main(int argc, char *argv[]){
-    std::cout << "HELLO\n";
-    
+    // initialize board
+    Board* board = new Board(10, 10);
+    board->init();
+    board->print();
+
+    delete board;
     return 0;
 }
