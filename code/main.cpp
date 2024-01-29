@@ -1,7 +1,7 @@
 /*
     Game of Life
 
-    by kelvinhh
+    by kelvin P
     January 27, 2024
 */
 #include <iostream>
