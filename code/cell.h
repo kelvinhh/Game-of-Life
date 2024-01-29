@@ -4,6 +4,7 @@
 class Cell{
     int x;
     int y;
+    int neighbors;
     bool alive;
 public:
     Cell();
@@ -11,7 +12,10 @@ public:
     void goDie();
     void goAlive();
     void setPos(int x, int y);
-    char status();
+    void setNeighbors(int _neighbors);
+    char getStatus();
+    int getNeighbors();
+    void update();
 };
 
 #endif

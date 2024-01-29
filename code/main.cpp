@@ -5,14 +5,23 @@
     January 27, 2024
 */
 #include <iostream>
+#include <fstream>
 #include "board.h"
-#include "action.h"
+
 
 int main(int argc, char *argv[]){
     // initialize board
-    Board board(10, 10);
-    board.randomState();
-    board.print();
+    Board board(50, 50);
+    // board.randomState();
+    std::ifstream f("test.txt");
+    board.read_file(f);
+    
+    while (1) {
+        board.print();
+        board.next();
+        std::cout << "Press enter to continue...";
+        std::cin.get();
+    }
 
     return 0;
 }
